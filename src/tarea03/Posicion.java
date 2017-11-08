@@ -31,4 +31,30 @@ public class Posicion {
 
     }
 
+    public int getFila() {
+        return this.fila;
+    }
+
+    public char getColumna() {
+        return this.columna;
+    }
+
+    public void setFila(int fila) {
+        if (fila > 0 && fila < 9) {
+            this.fila = fila;
+        } else {
+            this.fila = 1;
+            System.out.println("Fila inexistente. Fila '1' seleccionada.");
+        }
+    }
+
+    public void setColumna(char columna) {
+        if (columna >= 'a' && columna <= 'h') {
+            this.columna = columna;
+        } else {
+            this.columna = 'a';
+            System.out.println("Columna inexistente. Columna 'a' seleccionada.");
+        }
+    }
+
 }
