@@ -15,7 +15,7 @@ public class Posicion {
     private int fila;
     private char columna;
 
-    public void setPosicion(char columna, int fila) {
+    public Posicion(char columna, int fila) {
         if (columna >= 'a' && columna <= 'h') {
             this.columna = columna;
         } else {
@@ -57,4 +57,7 @@ public class Posicion {
         }
     }
 
+    public String toString() {
+        return "R" + getColumna() + "" + getFila() + ", ";
+    }
 }
