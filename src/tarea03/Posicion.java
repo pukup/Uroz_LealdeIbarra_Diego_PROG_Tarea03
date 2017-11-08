@@ -8,9 +8,27 @@ package tarea03;
 /**
  *
  * @author lol
- * 
+ *
  */
 public class Posicion {
+
     private int fila;
     private char columna;
+
+    public void setPosicion(char columna, int fila) {
+        if (columna >= 'a' && columna <= 'h') {
+            this.columna = columna;
+        } else {
+            this.columna = 'a';
+            System.out.println("Columna inexistente. Columna 'a' seleccionada.");
+        }
+        if (fila > 0 && fila < 9) {
+            this.fila = fila;
+        } else {
+            this.fila = 1;
+            System.out.println("Fila inexistente. Fila '1' seleccionada.");
+        }
+
+    }
+
 }
