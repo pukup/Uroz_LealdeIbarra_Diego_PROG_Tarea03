@@ -14,10 +14,11 @@ public class Rey {
     private Color color;
     private Posicion posicion;
 
-    public Rey(){
+    public Rey() {
         this.color = Color.BLANCO;
         this.posicion = new Posicion('e', 1);
     }
+
     public Rey(Color color) {
         switch (color) {
             case BLANCO:
@@ -29,5 +30,13 @@ public class Rey {
                 this.posicion = new Posicion('e', 8);
                 break;
         }
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public Posicion getPosicion() {
+        return posicion;
     }
 }
