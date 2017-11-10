@@ -6,15 +6,16 @@
 package tarea03;
 
 /**
- *
- * @author lol
- *
+ * Esta clase define la posición en un tablero bidimensional mediante dos atributos.
+ * Un atributo tipo char para las columnas y un atributo tipo entero para las filas.
  */
 public class Posicion {
 
+//Atributos que determinan la posición en un tablero bidimensional.
     private int fila;
     private char columna;
 
+//Constructor para definir los atributos, con valores por defecto alternativos.
     public Posicion(char columna, int fila) {
         if (columna >= 'a' && columna <= 'h') {
             this.columna = columna;
@@ -31,6 +32,12 @@ public class Posicion {
 
     }
 
+//Metodo que devuelve ambos atributos de la posición.
+    public String toString() {
+        return "R" + getColumna() + "" + getFila() + ", ";
+    }
+
+//Metodos getter/setter con valores por defecto alternativos.
     public int getFila() {
         return this.fila;
     }
@@ -55,9 +62,5 @@ public class Posicion {
             this.columna = 'a';
             System.out.println("Columna inexistente. Columna 'a' seleccionada.");
         }
-    }
-
-    public String toString() {
-        return "R" + getColumna() + "" + getFila() + ", ";
     }
 }
