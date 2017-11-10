@@ -39,4 +39,8 @@ public class Rey {
     public Posicion getPosicion() {
         return posicion;
     }
+    
+    public String toString(){
+        return color + ": " + posicion;
+    }
 }
