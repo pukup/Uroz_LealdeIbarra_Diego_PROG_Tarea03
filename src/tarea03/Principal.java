@@ -4,10 +4,16 @@
  * and open the template in the editor.
  */
 package tarea03;
-
 /**
- * En ajedrez cada pieza tiene un color blanco o negro.
+ *
+ * @author pukup
  */
-public enum Color {
-    BLANCO,NEGRO;
+public class Principal {
+    
+    
+        public static void main(String[] args) {
+
+            
+        }
+       
 }

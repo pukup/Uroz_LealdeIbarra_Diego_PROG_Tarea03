@@ -62,8 +62,12 @@ public class Rey {
         
         switch (direccion) {
             case NORTE:
-                Ilegal(Direccion.NORTE);
-                posicion.setFila(fila + 1);
+                if(Ilegal(Direccion.NORTE)){
+                    Ilegal(Direccion.NORTE);
+                }
+                else{
+                    posicion.setFila(fila + 1);
+                }                            
                 break;
             case SUR:
                 Ilegal(Direccion.SUR);
@@ -102,66 +106,78 @@ public class Rey {
     }
 
 //Informa cuando la posición está fuera del marco bidimensional fijado.   
-    private void Ilegal(Direccion direccion) {
-
+    private boolean Ilegal(Direccion direccion) {
+        
         int fila = posicion.getFila();
         int columna = posicion.getColumna();
-
+        boolean ilegal = true;
         switch (direccion) {
             case NORTE:
                 if (fila + 1 < 1 || fila + 1 > 8) {
-                    System.out.print("Movimiento ilegal por ");
-                }
+                    System.out.print("Movimiento ilegal.");
+                    ilegal = false;
+                }              
                 break;
             case SUR:
                 if (fila - 1 < 1 || fila - 1 > 8) {
-                    System.out.print("Movimiento ilegal por ");
+                    System.out.print("Movimiento ilegal.");
+                    ilegal = false;
                 }
                 break;
             case ESTE:
                 if (columna + 1 < 'a' || columna + 1 > 'h') {
-                    System.out.print("Movimiento ilegal por ");
+                    System.out.print("Movimiento ilegal.");
+                    ilegal = false;
                 }
                 break;
             case OESTE:
                 if (columna - 1 < 'a' || columna - 1 > 'h') {
-                    System.out.print("Movimiento ilegal por ");
+                    System.out.print("Movimiento ilegal.");
+                    ilegal = false;
                 }
                 break;
             case NORESTE:
                 if (fila + 1 < 1 || fila + 1 > 8) {
-                    System.out.print("Movimiento ilegal por ");
+                    System.out.print("Movimiento ilegal.");
+                    ilegal = false;
                 }
                 if (columna + 1 < 'a' || columna + 1 > 'h') {
-                    System.out.print("Movimiento ilegal por ");
+                    System.out.print("Movimiento ilegal.");
+                    ilegal = false;
                 }
                 break;
             case SURESTE:
                 if (fila - 1 < 1 || fila - 1 > 8) {
                     System.out.print("Movimiento ilegal por ");
+                    ilegal = false;
                 }
                 if (columna + 1 < 'a' || columna + 1 > 'h') {
                     System.out.print("Movimiento ilegal por ");
+                    ilegal = false;
                 }
                 break;
             case NOROESTE:
                 if (fila + 1 < 1 || fila + 1 > 8) {
                     System.out.print("Movimiento ilegal por ");
+                    ilegal = false;
                 }
                 if (columna - 1 < 'a' || columna - 1 > 'h') {
                     System.out.print("Movimiento ilegal por ");
+                    ilegal = false;
                 }
                 break;
             case SUROESTE:
                 if (fila - 1 < 1 || fila - 1 > 8) {
                     System.out.print("Movimiento ilegal por ");
+                    ilegal = false;
                 }
                 if (columna - 1 < 'a' || columna - 1 > 'h') {
                     System.out.print("Movimiento ilegal por ");
+                    ilegal = false;
                 }
                 break;
         }
-
+        return ilegal;
     }
 
 }

@@ -34,16 +34,16 @@ public class Posicion {
 
 //Metodo que devuelve ambos atributos de la posición.
     public String toString() {
-        return "R" + getColumna() + "" + getFila() + ", ";
+        return  columna + "" + fila + ". ";
     }
 
 //Metodos getter/setter con valores por defecto alternativos.
     public int getFila() {
-        return this.fila;
+        return fila;
     }
 
     public char getColumna() {
-        return this.columna;
+        return columna;
     }
 
     public void setFila(int fila) {
